@@ -1,22 +1,49 @@
-/*ax^2+bx+c şeklindeki deklemin köklerini bulma*/
 
+/* Finding the roots of the equation shaped like ax^2+bx+c*/
 #include"stdio.h"
 #include"math.h"
 int main(){
-	int a,b,c;
-	float x1,x2;
-	float delta;
-	printf("denklemin a'sini giriniz: ");
-	scanf("%d",&a);
-	printf("denklemin b'sini giriniz: ");
-	scanf("%d",&b);
-	printf("denklemin c'sini giriniz: ");
-	scanf("%d",&c);
-	
-	delta=b*b-4*a*c;
-	x1=(-b+(sqrt(delta)))/2*a;/*sqrt ifadesi math kütüphanesinde kök içine almak demek*/
-	x2=(-b-(sqrt(delta)))/2*a;
-	printf("denklemin 1.koku %.2f,2.koku %.2f dir.",x1,x2);	
-	
-	return 0;
+double a,b,c,r,k,S,M;
+double x1,x2;
+double delta, squareRoot;
+
+start:
+printf("Enter the a of the equation: ");
+scanf("%lf", &a);
+printf("Enter the b of the equation: ");
+scanf("%lf",&b);
+printf("Enter the c of the equation: ");
+scanf("%lf",&c);
+
+    delta=b*b-4*a*c;
+    squareRoot = sqrt(delta);
+    
+    x1=(-b+(squareRoot))/2*a;/*sqrt expression means rooting in math library */
+    x2=(-b-(squareRoot))/2*a;
+    if(delta<0)
+    {
+        printf("The equation cannot be solved try again...\n");
+        goto start;
+    }
+    else
+    {
+    printf("Square root of %.2lf = %.2lf \n", delta, squareRoot);
+    printf("Root of 1.inequality:%.2lf,Root of 2.inequality:%.2lf.\n",x1,x2);
+    }
+//
+//find the vertex of the equation ax^2+bx+c
+
+r=-b/2*a;
+k=a*r*r+b*r+c;
+S=x1+x2;
+M=x1*x2;
+
+
+printf("Vertex of the your equation: T(%.2lf,%.2lf).\n",r,k);
+printf("Equation is = f(x)=(x-%.2lf)^2+%.2lf\n",r,k);
+//or f(x)=(x^2-Sx+M)
+printf("f(x)=x^2-%.2lfx+%2.lf \n",S,M);
+
+
+return 0;
 }
