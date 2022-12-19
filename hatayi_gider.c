@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h> //upps,we forgot to activate the library.
 
 enum ArrayType{INT,FLOAT,CHAR};
 
@@ -31,7 +31,8 @@ void printArray(Array *arr){
     }
 }
 
-int main(){
+int main()  //DRİVE :)
+{
     int a[5] = {1,2,3,4,5};
     float b[5] = {1.1,2.2,3.3,4.4,5.5};
     char c[5] = {'a','b','c','d','e'};
@@ -48,3 +49,4 @@ int main(){
 
 }
 
+@themanoftalent 
