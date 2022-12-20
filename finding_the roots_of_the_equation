@@ -46,4 +46,5 @@ printf("f(x)=x^2-%.2lfx+%2.lf \n",S,M);
 
 
 return 0;
+
 }
