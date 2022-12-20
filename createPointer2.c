@@ -1,5 +1,6 @@
 // create a pointer
 //Pointer uses number and address of number
+
 #include <stdio.h>
 int main()
 {
