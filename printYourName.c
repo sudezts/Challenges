@@ -1,20 +1,33 @@
+//Adımı soyadımı ve yaşımı 3 fonksiyona yazdım. 
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
-
-char name[20],surname[30];
-int age;
-printf("Your name : ");
-scanf("%s",&name);
-pritnf("Your surname : ");
-scanf("%s",&surname);
-
-pritnf("Your age : ");
-scanf("%d",&age);
-printf("Name: %s \n Surname : %s \n Age : %d",name,surname,age); 
-
-return 0;
-  
+void isim(char *name) {
+    printf("Enter your name: ");
+    scanf("%s", name);
 }
-@themanoftalent
+
+void soyisim(char *surname) {
+    printf("Enter your surname: ");
+    scanf("%s", surname);
+}
+
+void yas(int *age) {
+    printf("Enter your age: ");
+    scanf("%d", age);
+}
+
+
+int main() {
+    char name[20], surname[20];
+    int age;
+    isim(name);
+    soyisim(surname);
+    yas(&age);
+  
+    printf("İsim: %s\nsoyisim: %s\nyaşınız: %d", name, surname, age);
+    return 0;
+}
+
